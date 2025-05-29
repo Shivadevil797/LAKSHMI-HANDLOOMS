@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="icon.png">
+<!-- <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script> -->
+<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAKSHMI HANDLOOMS</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo-details">
+            <i class='bx bx-code-curly icon'></i>
+            <!-- <div class="logo_name">Club</div> -->
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="./index.html">
+                    <i class='bx bx-home'></i>
+                    <span class="links_name">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="form/form.html">
+                    <i class='bx bx-calendar-event'></i>
+                    <span class="links_name">Events</span>
+                </a>
+                <span class="tooltip">Events</span>
+            </li>
+            <li>
+                <a href="projects/index.html">
+                    <i class='bx bx-folder'></i>
+                    <span class="links_name">Projects</span>
+                </a>
+                <span class="tooltip">Projects</span>
+            </li>
+            <li>
+                <a href="gallery/index.html">
+                    <i class='bx bx-photo-album'></i>
+                    <span class="links_name">Gallery</span>
+                </a>
+                <span class="tooltip">Gallery</span>
+            </li>
+            <li>
+                <a href="about/index.html">
+                    <i class='bx bx-info-square'></i>
+                    <span class="links_name">About Us</span>
+                </a>
+                <span class="tooltip">About Us</span>
+            </li>
+            <li>
+                <a href="contactus/index.html">
+                    <i class='bx bx-support'></i>
+                    <span class="links_name">Contact Us</span>
+                </a>
+                <span class="tooltip">Contact Us</span>
+            </li>
+            <li>
+                <a href="join/index.html">
+                    <i class='bx bx-log-in-circle'></i>
+                    <span class="links_name">Join</span>
+                </a>
+                <span class="tooltip">Join</span>
+            </li>
+        </ul>
+    </div>
+    <!-- <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav> -->
+
+
+<style>
+.navbar {
+    /* or space-between / space-around */
+    background-color: #1a1a1a; /* dark background */
+    padding: 10px 0; /* no padding */
+    width: 100%; /* full width */
+    top: 0; /* fixed to the top */
+    border-radius: 1px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* subtle shadow */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;/* ensure it stays on top */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0 20px; /* space between icons */
+    font-size: 24px;
+    display: inline-block;
+    transition: color 0.3s ease; /* smooth color transition */
+}
+
+.navbar a:hover {
+    color: #ffcc00; /* optional hover effect */
+}
+
+</style>
+
+</body>
+<script src="script.js"></script>
+</html>
