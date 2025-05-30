@@ -7,7 +7,7 @@ const firebaseConfig = {
     apiKey: "AIzaSyBHaMo9uSpe_u495e6A8nxF3LseZNS5kqA",
     authDomain: "lakshmi-handlooms-b44f3.firebaseapp.com",
     projectId: "lakshmi-handlooms-b44f3",
-    storageBucket: "lakshmi-handlooms-b44f3.firebasestorage.app",
+    storageBucket: "lakshmi-handlooms-b44f3.appspot.com",
     messagingSenderId: "905627045053",
     appId: "1:905627045053:web:3395815248c919ebfbfbd4",
     measurementId: "G-4FZ39K6KYQ"
@@ -23,8 +23,17 @@ window.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");
     loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const email = document.getElementById("email").value;
+    const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
+    console.log("Email:", email);
+    console.log("Password:", password);
+    if (!email || !password) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      // Sign in with Firebase Authentication
+
 
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
