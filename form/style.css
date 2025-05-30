@@ -1,4 +1,8 @@
-.body{
+*{
+    font-family: 'Courier New', monospace;;
+}
+
+body{
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
   margin: 0;
@@ -141,15 +145,3 @@
 .social-account-container .social-accounts .social-button:active {
   transform: scale(0.9);
 }
-
-/* .agreement {
-  display: block;
-  text-align: center;
-  margin-top: 15px;
-}
-
-.agreement a {
-  text-decoration: none;
-  color: #0099ff;
-  font-size: 9px;
-} */
