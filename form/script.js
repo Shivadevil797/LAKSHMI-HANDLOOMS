@@ -38,9 +38,7 @@ const firebaseConfig = {
                 // phone: phone,
                 email: email
             }).then(() => {
-                prompt("USER CREATED SUCCESSFULLY");
                 console.log("User data saved to Firestore");
-                window.location.href = "index.html"; 
             }).catch((error) => {
                 console.error("Error saving user data:", error);
             });
@@ -61,6 +59,8 @@ const firebaseConfig = {
                 // Signed in
                 const user = userCredential.user;
                 console.log("User signed in:", user);
+                prompt("User signed in successfully");
+                window.location.href = "index.html";
             })
             .catch((error) => {
                 console.error("Error signing in:", error);
