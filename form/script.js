@@ -43,10 +43,22 @@ window.addEventListener("DOMContentLoaded", () => {
         window.location.href = "../index.html"; // redirect to home
       })
       .catch((error) => {
-        console.error("Error code:", error.code);
         console.error("Error message:", error.message);
         alert("Login failed: " + error.message);
       });
+      switch (error.code) {
+      case 'auth/user-not-found':
+        alert("No user found with this email. Please sign up first.");
+        break;
+      case 'auth/wrong-password':
+        alert("Incorrect password. Please try again.");
+        break;
+      case 'auth/invalid-email':
+        alert("Invalid email format. Please check and try again.");
+        break;
+      default:
+        alert("Login failed: " + error.message);
+    }
   });
 });
 
