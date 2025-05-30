@@ -17,8 +17,8 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 
-    const signUp = document.getElementById("submit");
-    signUp.addEventListener("click", (e) => {
+    const submit = document.getElementById("submit");
+    submit.addEventListener("click", (e) => {
         e.preventDefault();
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
@@ -46,10 +46,9 @@ const firebaseConfig = {
         });
     });
 
-const signIn = document.getElementById("signIn");
+const submitBtn = document.getElementById("signIn");
 const auth = getAuth(app);
-const db = getFirestore(app);
-signIn.addEventListener("click", (e) => {
+submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
