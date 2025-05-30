@@ -32,7 +32,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const user = userCredential.user;
         console.log("User signed in:", user);
         alert("Login successful!");
-        window.location.href = "index.html"; // redirect to home
+        window.location.href = "main/index.html"; // redirect to home
       })
       .catch((error) => {
         console.error("Login error:", error.message);
