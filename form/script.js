@@ -32,8 +32,6 @@ const firebaseConfig = {
             // Signed in 
             const user = userCredential.user;
             console.log("User created:", user);
-            prompt("User signed in successfully");
-            window.location.href = "index.html";
             // Add user data to Firestore
             setDoc(doc(db, "users", user.uid), {
                 // name: name,
@@ -41,8 +39,6 @@ const firebaseConfig = {
                 email: email
             }).then(() => {
                 console.log("User data saved to Firestore");
-                prompt("User signed in successfully");
-                window.location.href = "index.html";
             }).catch((error) => {
                 console.error("Error saving user data:", error);
             });
