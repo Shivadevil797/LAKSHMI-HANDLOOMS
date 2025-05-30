@@ -22,8 +22,6 @@ const firebaseConfig = {
         e.preventDefault();
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
-        // const name = document.getElementById("name").value;
-        // const phone = document.getElementById("phone").value;
 
         const auth = getAuth(app);
         const db = getFirestore(app);
@@ -33,30 +31,24 @@ const firebaseConfig = {
             // Signed in 
             const user = userCredential.user;
             console.log("User created:", user);
+
             const userData={
-                // name: name,
-                // phone: phone,
                 email: email
             };
-            // Add user data to Firestore
-            // setDoc(doc(db, "users", user.uid), userData).then(() => {
-            //     console.log("User data saved to Firestore");
-
             const docRef = doc(db, "users", user.uid);
-            setDoc(docRef, userData).then(() => {
-                console.log("User data saved to Firestore");
-                // Optionally, redirect or show a success message
-            }).then(() => {
-                alert("User created successfully!");
-                window.location.href = "index.html"; // Redirect to home page
-            });
+            return setDoc(docRef, userData);
+        }).then(() => {
+            console.log("User data saved to Firestore");
+            alert("User created successfully!");
+            window.location.href = "index.html"; // Redirect to home page
         }).catch((error) => {
             console.error("Error saving user data:", error);
         });
-    }).catch((error) => {
-        console.error("Error creating user:", error);
     });
+
 const signIn = document.getElementById("signIn");
+const auth = getAuth(app);
+const db = getFirestore(app);
 signIn.addEventListener("click", (e) => {
     e.preventDefault();
     const email = document.getElementById("email").value;
