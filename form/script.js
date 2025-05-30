@@ -14,53 +14,75 @@ const firebaseConfig = {
   };
 
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-
-    const submit = document.getElementById("submit");
-    submit.addEventListener("click", (e) => {
-        e.preventDefault();
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-    
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-            console.log("User created:", user);
-
-            const userData={
-                email: email
-            };
-            const docRef = doc(db, "users", user.uid);
-            return setDoc(docRef, userData);
-        }).then(() => {
-            console.log("User data saved to Firestore");
-            alert("User created successfully!");
-            window.location.href = "index.html"; // Redirect to home page
-        }).catch((error) => {
-            console.error("Error saving user data:", error);
-        });
-    });
-
-const submitBtn = document.getElementById("signIn");
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 const auth = getAuth(app);
-submitBtn.addEventListener("click", (e) => {
+const db = getFirestore(app);
+
+window.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("loginForm");
+
+  loginForm.addEventListener("submitBtn", (e) => {
     e.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
     signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed in
-                const user = userCredential.user;
-                console.log("User signed in:", user);
-            })
-            .catch((error) => {
-                console.error("Error signing in:", error);
-            });
-    });
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log("User signed in:", user);
+        alert("Login successful!");
+        window.location.href = "index.html"; // redirect to home
+      })
+      .catch((error) => {
+        console.error("Login error:", error.message);
+        alert("Login failed: " + error.message);
+      });
+  });
+});
+
+
+
+//     const submitBtn = document.getElementById("submitBtn");
+//     submitBtn.addEventListener("click", (e) => {
+//         e.preventDefault();
+//         const email = document.getElementById("email").value;
+//         const password = document.getElementById("password").value;
+    
+//         createUserWithEmailAndPassword(auth, email, password)
+//             .then((userCredential) => {
+//             // Signed in 
+//             const user = userCredential.user;
+//             console.log("User created:", user);
+
+//             const userData={
+//                 email: email
+//             };
+//             const docRef = doc(db, "users", user.uid);
+//             return setDoc(docRef, userData);
+//         }).then(() => {
+//             console.log("User data saved to Firestore");
+//             alert("User created successfully!");
+//             window.location.href = "index.html"; // Redirect to home page
+//         }).catch((error) => {
+//             console.error("Error saving user data:", error);
+//         });
+//     });
+
+// const submit = document.getElementById("signIn");
+// submit.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     const email = document.getElementById("email").value;
+//     const password = document.getElementById("password").value;
+
+//     signInWithEmailAndPassword(auth, email, password)
+//         .then((userCredential) => {
+//             // Signed in
+//                 const user = userCredential.user;
+//                 console.log("User signed in:", user);
+//             })
+//             .catch((error) => {
+//                 console.error("Error signing in:", error);
+//             });
+//     });
 
