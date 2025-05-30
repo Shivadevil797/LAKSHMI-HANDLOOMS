@@ -43,7 +43,8 @@ window.addEventListener("DOMContentLoaded", () => {
         window.location.href = "../index.html"; // redirect to home
       })
       .catch((error) => {
-        console.error("Login error:", error.message);
+        console.error("Error code:", error.code);
+        console.error("Error message:", error.message);
         alert("Login failed: " + error.message);
       });
   });
