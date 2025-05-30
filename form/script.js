@@ -19,6 +19,19 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
+
+// createUserWithEmailAndPassword(auth, email, password)
+//   .then((userCredential) => {
+//     const user = userCredential.user;
+//     console.log("User created:", user);
+//     alert("Signup successful! You can now login.");
+//     window.location.href = "./login.html"; // redirect to login page
+//   })
+//   .catch((error) => {
+//     console.error("Signup error:", error.message);
+//     alert("Signup failed: " + error.message);
+//   });
+
 window.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");
     loginForm.addEventListener("submit", (e) => {
