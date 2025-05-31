@@ -45,8 +45,6 @@ window.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-
-
       // Firebase Configuration
 const firebaseConfig = {
     apiKey: "AlzaSyBHaMo9uSpe_u4956e6A8nxF3LseZN5skqA",
@@ -58,30 +56,27 @@ const firebaseConfig = {
     measurementId: "G-4FZ396K6XY"
 };
 
-// Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const auth = firebase.getAuth(app);
 
-// Registration function
-document.getElementById('registrationForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+// // Registration function
+// document.getElementById('registrationForm').addEventListener('submit', function(event) {
+//     event.preventDefault();
     
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+//     const email = document.getElementById('email').value;
+//     const password = document.getElementById('password').value;
 
-    firebase.createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-            alert('Registration successful! You can now log in.');
-            window.location.href = "login.html";  // Redirect to login page
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            alert(`Error: ${errorMessage}`);
-        });
-});
+//     createUserWithEmailAndPassword(auth, email, password)
+//         .then((userCredential) => {
+//             // Signed in 
+//             const user = userCredential.user;
+//             alert('Registration successful! You can now log in.');
+//             window.location.href = "login.html";  // Redirect to login page
+//         })
+//         .catch((error) => {
+//             const errorCode = error.code;
+//             const errorMessage = error.message;
+//             alert(`Error: ${errorMessage}`);
+//         });
+// });
 
       // Sign in with Firebase Authentication
 
