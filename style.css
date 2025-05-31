@@ -28,6 +28,29 @@ body{
     color: red;
 } 
 
+.navbar {
+    /* or space-between / space-around */
+    background-color: #1a1a1a; /* dark background */
+    padding: 10px 0; /* no padding */
+    width: 100%; /* full width */
+    top: 0; /* fixed to the top */
+    border-radius: 1px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* subtle shadow */
+    /* position: fixed;  */
+    left: 0;/* ensure it stays on top */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0 20px; /* space between icons */
+    display: grid;
+    transition: color 0.3s ease; /* smooth color transition */
+}
+
+.navbar a:hover {
+    color: #ffcc00; /* optional hover effect */
+}
 
 /* Responsive media queries for navbar */
 
@@ -95,4 +118,42 @@ body{
   .navbar ul.nav-list li .links_name {
     display: inline;
   }
+}
+
+/* .main{
+  transition: text-shadow 0.5s ease;
+  position: relative;
+  color: #fff;
+  background: linear-gradient(90deg, #fff, #ff0, #fff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s linear infinite;
+}
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+} */
+
+.main:hover {
+  text-shadow: 0 0 10px rgb(255, 213, 0), 0 0 20px rgb(255, 196, 0);
+  transform: translateY(-10px);
+}
+.main {
+  font-weight: bold;
+  background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
+  background-size: 400%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 5s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% }
+  100% { background-position: 100% }
 }
