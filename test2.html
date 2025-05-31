@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Moving Slide Carousel</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+  .carousel-container {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    background: white;
+  }
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .card {
+    min-width: 220px;
+    margin: 15px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+  }
+  .card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+  .card-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 0 6px;
+    color: #222;
+  }
+  .card-description {
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #555;
+    flex-grow: 1;
+    line-height: 1.2;
+  }
+  .card-price {
+    margin-top: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #e91e63;
+  }
+  /* Navigation buttons */
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #e91e63;
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background 0.3s ease;
+    z-index: 10;
+  }
+  .nav-btn:hover {
+    background: #ad1457;
+  }
+  .nav-btn:focus {
+    outline: none;
+  }
+  .prev-btn {
+    left: 10px;
+  }
+  .next-btn {
+    right: 10px;
+  }
+  @media (max-width: 600px) {
+    .card {
+      min-width: 180px;
+      margin: 10px;
+    }
+    .card img {
+      height: 120px;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="carousel-container" aria-label="Bedsheet cards carousel">
+    <button class="nav-btn prev-btn" aria-label="Previous slide">&#10094;</button>
+    <div class="carousel-track">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1580910051076-f7a60006338e?auto=format&fit=crop&w=400&q=80" alt="Floral Cotton Bedsheet" />
+        <div class="card-content">
+          <h3 class="card-title">Floral Cotton</h3>
+          <p class="card-description">Soft cotton bedsheet with delicate floral patterns for a fresh look.</p>
+          <div class="card-price">$44.99</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=400&q=80" alt="Striped Blue Bedsheet" />
+        <div class="card-content">
+          <h3 class="card-title">Blue Stripes</h3>
+          <p class="card-description">Lightweight bedsheet with elegant blue stripes and smooth texture.</p>
+          <div class="card-price">$39.99</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443f87?auto=format&fit=crop&w=400&q=80" alt="Beige Linen Bedsheet" />
+        <div class="card-content">
+          <h3 class="card-title">Beige Linen</h3>
+          <p class="card-description">Breathable linen bedsheet in calming beige, perfect for any season.</p>
+          <div class="card-price">$59.99</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1591447908278-47bbf5e155d8?auto=format&fit=crop&w=400&q=80" alt="Modern Grey Bedsheet" />
+        <div class="card-content">
+          <h3 class="card-title">Modern Grey</h3>
+          <p class="card-description">Chic solid grey bedsheet crafted from premium microfiber fabric.</p>
+          <div class="card-price">$49.99</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1525465575563-046a8c5e21a6?auto=format&fit=crop&w=400&q=80" alt="Pastel Pink Bedsheet" />
+        <div class="card-content">
+          <h3 class="card-title">Pastel Pink</h3>
+          <p class="card-description">Soft and soothing pastel pink bedsheet with subtle texture.</p>
+          <div class="card-price">$42.00</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Classic White Bedsheet" />
+        <div class="card-content">
+          <h3 class="card-title">Classic White</h3>
+          <p class="card-description">Crisp white bedsheet that adds a clean and fresh vibe to any bedroom.</p>
+          <div class="card-price">$34.99</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1582407947304-02a993ebc2b7?auto=format&fit=crop&w=400&q=80" alt="Green Botanical Bedsheet" />
+        <div class="card-content">
+          <h3 class="card-title">Green Botanical</h3>
+          <p class="card-description">Nature-inspired botanical print bedsheet in refreshing green tones.</p>
+          <div class="card-price">$47.50</div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1560185127-7b7421d38e19?auto=format&fit=crop&w=400&q=80" alt="Vintage Pattern Bedsheet" />
+        <div class="card-content">
+          <h3 class="card-title">Vintage Pattern</h3>
+          <p class="card-description">Elegant vintage pattern bedsheet with warm hues for cozy vibe.</p>
+          <div class="card-price">$55.00</div>
+        </div>
+      </div>
+    </div>
+    <button class="nav-btn next-btn" aria-label="Next slide">&#10095;</button>
+  </div>
+
+  <script>
+    (function() {
+      const track = document.querySelector('.carousel-track');
+      const cards = Array.from(track.children);
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+      const cardWidth = cards[0].getBoundingClientRect().width + 30; // card width + margin approximate
+      let currentIndex = 0;
+
+      function moveToIndex(index) {
+        if (index < 0) {
+          currentIndex = cards.length - 1;
+        } else if (index >= cards.length) {
+          currentIndex = 0;
+        } else {
+          currentIndex = index;
+        }
+        const distance = -currentIndex * cardWidth;
+        track.style.transform = `translateX(${distance}px)`;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        moveToIndex(currentIndex - 1);
+        resetAutoSlide();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        moveToIndex(currentIndex + 1);
+        resetAutoSlide();
+      });
+
+      // Auto slide every 4 seconds
+      let autoSlideInterval = setInterval(() => {
+        moveToIndex(currentIndex + 1);
+      }, 4000);
+
+      function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
+          moveToIndex(currentIndex + 1);
+        }, 4000);
+      }
+
+      // Initialize positions (optional if cards have margin, but safer)
+      moveToIndex(0);
+    })();
+  </script>
+</body>
+</html>
+
