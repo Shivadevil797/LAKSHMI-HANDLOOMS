@@ -13,11 +13,142 @@ const firebaseConfig = {
     measurementId: "G-4FZ39K6KYQ"
   };
 
-  // Initialize Firebase
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
+
+window.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("loginForm");
+  const registrationForm = document.getElementById("registrationForm");
+
+  // 🔐 LOGIN
+  if (loginForm) {
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      if (!email || !password) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          console.log("User signed in:", userCredential.user);
+          alert("Login successful!");
+          window.location.href = "../index.html";
+        })
+        .catch((error) => {
+          console.error("Login error:", error.code, error.message);
+          switch (error.code) {
+            case 'auth/user-not-found':
+              alert("No user found with this email.");
+              break;
+            case 'auth/wrong-password':
+              alert("Wrong password.");
+              break;
+            case 'auth/invalid-email':
+              alert("Invalid email format.");
+              break;
+            default:
+              alert("Login failed: " + error.message);
+          }
+        });
+    });
+  }
+
+  // 📝 REGISTRATION
+  if (registrationForm) {
+    registrationForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (!email || !password) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          console.log("User created:", userCredential.user);
+          alert("Registration successful!");
+          window.location.href = "./index.html";
+        })
+        .catch((error) => {
+          console.error("Registration error:", error.code, error.message);
+          alert(`Error: ${error.message}`);
+        });
+    });
+  }
+});
+
+
+//////////////////////
+// window.addEventListener("DOMContentLoaded", () => {
+//     const loginForm = document.getElementById("loginForm","RegistrationForm");
+//     loginForm.addEventListener("submit", (e) => {
+//     e.preventDefault();
+//     const email = document.getElementById("email").value.trim();
+//     const password = document.getElementById("password").value;
+//     console.log("Email:", email);
+//     console.log("Password:", password);
+//     if (!email || !password) {
+//         alert("Please fill in all fields.");
+//         return;
+//     }
+
+// // // Registration function
+// document.getElementById('registrationForm').addEventListener('submit', function(event) {
+//     event.preventDefault();
+
+//     const email = document.getElementById('email').value.trim();
+//     const password = document.getElementById('password').value.trim();
+
+//     createUserWithEmailAndPassword(auth, email, password)
+//         .then((userCredential) => {
+//             const user = userCredential.user;
+//             alert('Registration successful! You can now log in.');
+//             window.location.href = "./index.html";  // Redirect to login page
+//         })
+//         .catch((error) => {
+//             const errorCode = error.code;
+//             const errorMessage = error.message;
+//             alert(`Error: ${errorMessage}`);
+//         });
+// });
+
+//       // Sign in with Firebase Authentication
+//     signInWithEmailAndPassword(auth, email, password)
+//     .then((userCredential) => {
+//         const user = userCredential.user;
+//         console.log("User signed in:", user);
+//         alert("Login successful!");
+//         window.location.href = "../index.html"; // redirect to home
+//       })
+//       .catch((error) => {
+//         console.error("Error message:", error.message);
+//         alert("Login failed: " + error.message);
+//       });
+//         switch (error.code) {
+//           case 'auth/user-not-found':
+//             alert("No user found with this email. Please sign up first.");
+//             break;
+//         case 'auth/wrong-password':
+//           alert("Incorrect password. Please try again.");
+//           break;
+//         case 'auth/invalid-email':
+//           alert("Invalid email format. Please check and try again.");
+//           break;
+//         default:
+//           alert("Login failed: " + error.message);
+//     }
+//   });
+// });
+
 
 
 // createUserWithEmailAndPassword(auth, email, password)
@@ -31,69 +162,6 @@ const db = getFirestore(app);
 //     console.error("Signup error:", error.message);
 //     alert("Signup failed: " + error.message);
 //   });
-
-window.addEventListener("DOMContentLoaded", () => {
-    const loginForm = document.getElementById("loginForm");
-    loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value;
-    console.log("Email:", email);
-    console.log("Password:", password);
-    if (!email || !password) {
-        alert("Please fill in all fields.");
-        return;
-    }
-
-// // Registration function
-document.getElementById('registrationForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
-
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            alert('Registration successful! You can now log in.');
-            window.location.href = "./index.html";  // Redirect to login page
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            alert(`Error: ${errorMessage}`);
-        });
-});
-
-      // Sign in with Firebase Authentication
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        const user = userCredential.user;
-        console.log("User signed in:", user);
-        alert("Login successful!");
-        window.location.href = "../index.html"; // redirect to home
-      })
-      .catch((error) => {
-        console.error("Error message:", error.message);
-        alert("Login failed: " + error.message);
-      });
-      switch (error.code) {
-      case 'auth/user-not-found':
-        alert("No user found with this email. Please sign up first.");
-        break;
-      case 'auth/wrong-password':
-        alert("Incorrect password. Please try again.");
-        break;
-      case 'auth/invalid-email':
-        alert("Invalid email format. Please check and try again.");
-        break;
-      default:
-        alert("Login failed: " + error.message);
-    }
-  });
-});
-
-
 
 //     const submitBtn = document.getElementById("submitBtn");
 //     submitBtn.addEventListener("click", (e) => {
