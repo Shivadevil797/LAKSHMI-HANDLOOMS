@@ -58,29 +58,27 @@ const firebaseConfig = {
 
 
 // // Registration function
-// document.getElementById('registrationForm').addEventListener('submit', function(event) {
-//     event.preventDefault();
-    
-//     const email = document.getElementById('email').value;
-//     const password = document.getElementById('password').value;
+document.getElementById('registrationForm').addEventListener('register', function(event) {
+    event.preventDefault();
 
-//     createUserWithEmailAndPassword(auth, email, password)
-//         .then((userCredential) => {
-//             // Signed in 
-//             const user = userCredential.user;
-//             alert('Registration successful! You can now log in.');
-//             window.location.href = "login.html";  // Redirect to login page
-//         })
-//         .catch((error) => {
-//             const errorCode = error.code;
-//             const errorMessage = error.message;
-//             alert(`Error: ${errorMessage}`);
-//         });
-// });
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            alert('Registration successful! You can now log in.');
+            window.location.href = "./index.html";  // Redirect to login page
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(`Error: ${errorMessage}`);
+        });
+});
 
       // Sign in with Firebase Authentication
-
-
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         const user = userCredential.user;
