@@ -1,9 +1,9 @@
-body {
+/* body {
     background-color: #f0e4e8;
     font-family: Arial, sans-serif;
 }
 
-.container {
+/* .container {
     max-width: 400px;
     margin: 100px auto;
     padding: 20px;
@@ -33,4 +33,127 @@ button {
 
 button:hover {
     background-color: #0056b3;
+} */ */
+
+*{
+    font-family: 'Courier New', monospace;;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0px;
+  background-color: rgb(245, 151, 151);
+
+}
+.container {
+  max-width: 300px;
+  max-height: 50%;
+  background: #f8f9fd;
+  background: linear-gradient(
+    5deg,
+    rgb(50, 117, 242) 0%,
+    rgb(244, 247, 251) 100%
+    
+  );
+  border-radius: 40px;
+  padding: 55px 80px;
+  border: 5px solid rgb(113, 98, 98);
+  box-shadow: rgba(248, 136, 95, 0.878) 0px 30px 30px -20px;
+  margin: 50px auto;
+}
+
+.heading {
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: rgb(50, 117, 242)
+}
+
+.form {
+  margin-top: 20px;
+}
+
+.form .input {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin-top: 15px;
+  box-shadow:  rgb(50, 117, 242) 0px 10px 10px -5px;
+  border-inline: 2px solid transparent;
+}
+
+.form .input::-moz-placeholder {
+  color: rgb(170, 170, 170);
+}
+
+.form .input::placeholder {
+  color: rgb(170, 170, 170);
+}
+
+.form .input:focus {
+  outline: none;
+  border-inline: 2px solid #12b1d1;
+}
+
+.form .register-button {
+  display: block;
+  width: 50%;
+  font-weight: bold;
+  background: linear-gradient(
+    360deg,
+    rgb(235, 141, 141) 0%,
+    rgb(244, 247, 251) 100%
+  );
+  color: white;
+  padding-block: 15px;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  text-align:center;
+}
+
+.form .register-button:hover {
+  transform: scale(1.03);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+  background: #ff6c6c;
+}
+
+.form .register-button:active {
+  transform: scale(0.95);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+}
+.social-login{
+  align-items: center;
+}
+
+.social-buttons{
+  display:grid;
+  transition: rgba(0, 0, 0, 0.878);
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 20px;
+}
+.social-buttons button {
+  background: #fff;
+  border: none;
+  padding: 2%;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.social-buttons button:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 10px -1px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px -1px;
+    background: #f96161;
+}
+.social-buttons button img {
+  width: 30px;
+  height: 30px;
 }
