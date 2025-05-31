@@ -27,3 +27,72 @@ body{
 .navbar ul li a:hover {
     color: red;
 } 
+
+
+/* Responsive media queries for navbar */
+
+@media (max-width: 575.98px) {
+  /* Extra small devices (phones) */
+  .navbar {
+    padding: 8px 5px;
+  }
+  .navbar a {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+  .navbar ul.nav-list {
+    gap: 20px;  /* reduce space between items */
+    justify-content: space-around;
+  }
+  .navbar ul.nav-list li .links_name {
+    display: none; /* hide text to save space */
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Small devices (landscape phones) */
+  .navbar {
+    padding: 10px 10px;
+  }
+  .navbar a {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+  .navbar ul.nav-list {
+    gap: 40px;
+  }
+  .navbar ul.nav-list li .links_name {
+    display: inline;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Medium devices (tablets) */
+  .navbar {
+    padding: 12px 20px;
+  }
+  .navbar a {
+    font-size: 16px;
+    padding: 0 18px;
+  }
+  .navbar ul.nav-list {
+    gap: 60px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Large devices and up (desktops) */
+  .navbar {
+    padding: 15px 40px;
+  }
+  .navbar a {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+  .navbar ul.nav-list {
+    gap: 80px;
+  }
+  .navbar ul.nav-list li .links_name {
+    display: inline;
+  }
+}

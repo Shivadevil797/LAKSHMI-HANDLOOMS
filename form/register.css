@@ -117,3 +117,110 @@ body{
 }
 
 
+/* Responsive media queries for registration form */
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .container {
+    max-width: 90%;
+    padding: 30px 20px;
+    margin: 30px auto;
+  }
+  .heading {
+    font-size: 24px;
+  }
+  .form .input {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+  .form .register-button {
+    width: 80%;
+    padding-block: 12px;
+    font-size: 16px;
+  }
+  .social-buttons {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .social-buttons button {
+    padding: 10px;
+  }
+}
+
+/* Small devices (landscape phones, 576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .container {
+    max-width: 320px;
+    padding: 40px 40px;
+  }
+  .heading {
+    font-size: 26px;
+  }
+  .form .input {
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+  .form .register-button {
+    width: 70%;
+    padding-block: 14px;
+    font-size: 17px;
+  }
+  .social-buttons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .social-buttons button {
+    padding: 12px;
+  }
+}
+
+/* Medium devices (tablets, 768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    max-width: 350px;
+    padding: 50px 60px;
+  }
+  .heading {
+    font-size: 28px;
+  }
+  .form .input {
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+  .form .register-button {
+    width: 60%;
+    padding-block: 15px;
+    font-size: 18px;
+  }
+  .social-buttons {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .social-buttons button {
+    padding: 14px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 300px;
+    padding: 55px 80px;
+  }
+  .heading {
+    font-size: 30px;
+  }
+  .form .input {
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+  .form .register-button {
+    width: 50%;
+    padding-block: 15px;
+    font-size: 18px;
+  }
+  .social-buttons {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .social-buttons button {
+    padding: 16px;
+  }
+}

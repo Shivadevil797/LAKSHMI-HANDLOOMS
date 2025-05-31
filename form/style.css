@@ -170,3 +170,87 @@ body{
   height: 30px;
 }
 
+
+
+/* Small devices (phones, up to 480px) */
+@media (max-width: 480px) {
+  .container {
+    max-width: 90%;
+    padding: 30px 20px;
+    border-radius: 25px;
+    margin: 30px auto;
+  }
+  
+  .heading {
+    font-size: 24px;
+  }
+  
+  .form .input {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+  
+  .form .login-button,
+  .form .register-button {
+    width: 100%;
+    padding-block: 12px;
+    font-size: 16px;
+  }
+  
+  .social-buttons {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+}
+
+/* Medium devices (tablets, 481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    max-width: 350px;
+    padding: 45px 40px;
+    margin: 40px auto;
+  }
+  
+  .heading {
+    font-size: 28px;
+  }
+  
+  .form .input {
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+  
+  .form .login-button,
+  .form .register-button {
+    width: 70%;
+    padding-block: 14px;
+    font-size: 17px;
+  }
+  
+  .social-buttons {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 9px;
+  }
+}
+
+/* Large devices (desktops and above, 769px and up) */
+@media (min-width: 769px) {
+  .container {
+    max-width: 300px;
+    padding: 55px 80px;
+  }
+  
+  .heading {
+    font-size: 30px;
+  }
+  
+  .form .login-button,
+  .form .register-button {
+    width: 50%;
+    font-size: 18px;
+  }
+  
+  .social-buttons {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
