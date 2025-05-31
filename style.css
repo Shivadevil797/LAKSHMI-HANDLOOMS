@@ -141,7 +141,7 @@ body{
 } */
 
 .main:hover {
-  text-shadow: 0 0 10px rgb(255, 213, 0), 0 0 20px rgb(255, 196, 0);
+  /* text-shadow: 0 0 10px rgb(255, 213, 0), 0 0 20px rgb(255, 196, 0); */
   transform: translateY(-10px);
 }
 .main {
