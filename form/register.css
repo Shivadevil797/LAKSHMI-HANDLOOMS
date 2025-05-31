@@ -35,11 +35,12 @@ button:hover {
     background-color: #0056b3;
 } */ */
 
-*{
-    font-family: 'Courier New', monospace;;
-}
+/* *{
+    font-family: 'Courier New', monospace;
+} */
 
 body{
+    font-family: 'Courier New', monospace;
   background-color: #f0f0f0;
   margin: 0;
   padding: 0px;
