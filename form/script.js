@@ -25,7 +25,7 @@ const db = getFirestore(app);
 //     const user = userCredential.user;
 //     console.log("User created:", user);
 //     alert("Signup successful! You can now login.");
-//     window.location.href = "./login.html"; // redirect to login page
+//     window.location.href = "./register.html"; // redirect to login page
 //   })
 //   .catch((error) => {
 //     console.error("Signup error:", error.message);
@@ -43,19 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (!email || !password) {
         alert("Please fill in all fields.");
         return;
-      }
-
-      // Firebase Configuration
-const firebaseConfig = {
-    apiKey: "AlzaSyBHaMo9uSpe_u4956e6A8nxF3LseZN5skqA",
-    authDomain: "lakshmi-handlooms-b44f3.firebaseapp.com",
-    projectId: "lakshmi-handlooms-b44f3",
-    storageBucket: "lakshmi-handlooms-b44f3.appspot.com",
-    messagingSenderId: "905627045053",
-    appId: "1:905627045053:web:339851248c919ebfbfbd4",
-    measurementId: "G-4FZ396K6XY"
-};
-
+    }
 
 // // Registration function
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
@@ -66,7 +54,6 @@ document.getElementById('registrationForm').addEventListener('submit', function(
 
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Signed in 
             const user = userCredential.user;
             alert('Registration successful! You can now log in.');
             window.location.href = "./index.html";  // Redirect to login page
