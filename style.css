@@ -143,7 +143,6 @@ body{
 .main:hover {
   /* text-shadow: 0 0 10px rgb(255, 213, 0), 0 0 20px rgb(255, 196, 0); */
   transform: translateY(-10px);
-  border:#1a1a1a solid 0.5px;
 }
 .main{
   font-weight: bold;
@@ -170,7 +169,7 @@ body{
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: rainbow 5s linear infinite;
-   border:#1a1a1a solid 1px;
+
 }
 
 @keyframes rainbow {
@@ -188,7 +187,6 @@ body{
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: rainbow 5s linear infinite;
-   border:#1a1a1a solid 1px;
 }
 
 @keyframes rainbow {
