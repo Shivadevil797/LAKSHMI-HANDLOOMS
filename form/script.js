@@ -81,6 +81,7 @@ window.addEventListener("DOMContentLoaded", () => {
         .catch((error) => {
           console.error("Registration error:", error.code, error.message);
           alert(`Error: ${error.message}`);
+          window.location.href = "./index.html"; // Redirect to login page
         });
     });
   }
